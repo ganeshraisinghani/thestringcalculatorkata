@@ -1,8 +1,10 @@
 
 public class Calculator {
+	
+	private final String delimiter = ",|\n";
 
 	public int calculate(String input) {
-		String[] numbers = input.split(",");
+		String[] numbers = input.split(delimiter);
 		if(isEmpty(input)) {
 			return 0;	
 		}
@@ -10,9 +12,13 @@ public class Calculator {
 			return stringToInt(input);
 		}
 		else {
-			return Integer.parseInt(numbers[0]) + Integer.parseInt(numbers[1]);
+			return getSum(numbers[0],numbers[1]);
 			
 		}
+	}
+	
+	private int getSum(String numA, String numbB) {
+		return Integer.parseInt(numA) + Integer.parseInt(numbB);
 	}
 	
 	private boolean isEmpty(String input) {

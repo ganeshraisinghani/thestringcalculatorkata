@@ -19,10 +19,14 @@ public class TestCalculate {
 	}
 	
 	public void singleValueIsReplied() {
-		assertEquals(calculator.calculate("1"),1);
+		assertEquals(calculator.calculate("1"), 1);
 	}
 	
 	public void twoNumbersCommaDelimiterReturnSum() {
-		assertEquals(calculator.calculate("1,2"),3);
+		assertEquals(calculator.calculate("1,2"), 3);
+	}
+	
+	public void twoNumbersNewLineDelimitedReturnSum() {
+		assertEquals(calculator.calculate("1\n2"), 3);
 	}
 }
