@@ -12,25 +12,31 @@ public class TestCalculate {
 		calculator = new Calculator();
 	}
 
-	public void emptyStringReturnsZero() {
+	public void emptyStringReturnsZero() throws Exception {
 		assertEquals(calculator.calculate(""), 0);
 		
 		
 	}
 	
-	public void singleValueIsReplied() {
+	public void singleValueIsReplied() throws Exception {
 		assertEquals(calculator.calculate("1"), 1);
 	}
 	
-	public void twoNumbersCommaDelimiterReturnSum() {
+	public void twoNumbersCommaDelimiterReturnSum() throws Exception {
 		assertEquals(calculator.calculate("1,2"), 3);
 	}
 	
-	public void twoNumbersNewLineDelimitedReturnSum() {
+	public void twoNumbersNewLineDelimitedReturnSum() throws Exception {
 		assertEquals(calculator.calculate("1\n2"), 3);
 	}
 	
-	public void threeNumbersDelimitedBothWaysReturnSum() {
+	public void threeNumbersDelimitedBothWaysReturnSum() throws Exception {
 		assertEquals(calculator.calculate("1,2,3"), 6);
+	}
+	
+	@Test(expectedExceptions=Exception.class) 
+		
+	public void negativeInputReturnsException() throws Exception {
+		calculator.calculate("-1");
 	}
 }
