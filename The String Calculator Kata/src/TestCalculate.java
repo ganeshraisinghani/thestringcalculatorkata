@@ -29,4 +29,8 @@ public class TestCalculate {
 	public void twoNumbersNewLineDelimitedReturnSum() {
 		assertEquals(calculator.calculate("1\n2"), 3);
 	}
+	
+	public void threeNumbersDelimitedBothWaysReturnSum() {
+		assertEquals(calculator.calculate("1,2,3"), 6);
+	}
 }
