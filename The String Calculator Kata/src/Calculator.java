@@ -20,8 +20,17 @@ public class Calculator {
 	private int getSum(String[] numbers) throws Exception {
 		findDangerousInput(numbers);
 		
+		return calculateValues(numbers);
+	
+	}
+	
+	private int calculateValues(String[] numbers) {
 		int sum = 0;
+		
 		for (String current:numbers) {
+			if(stringToInt(current) > 1000) {
+				continue;
+			}
 			sum += stringToInt(current);
 		}
 		return sum;
